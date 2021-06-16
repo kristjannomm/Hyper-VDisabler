@@ -40,7 +40,6 @@ goto :choice
 
 :yes
 powershell.exe -Command "bcdedit /set hypervisorlaunchtype off"
-powershell.exe -Command "HKLM\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios\HypervisorEnforcedCodeIntegrity" /v "Enabled" /t REG_DWORD /d 0 /f"
 
 ECHO Hyper-V has been fully disabled! Please restart your PC. 
 :end
