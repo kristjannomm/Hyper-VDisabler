@@ -3,7 +3,7 @@
 
 :: BatchGotAdmin
 :-------------------------------------
-REM  --> 
+REM  -->
 >nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
 
 REM --> 
@@ -26,7 +26,7 @@ if '%errorlevel%' NEQ '0' (
     CD /D "%~dp0"
 :--------------------------------------
 
-COLOR 6
+COLOR 0E
 ECHO ==========================
 ECHO Hyper-V Disabler
 ECHO https://github.com/kristjannomm
@@ -40,6 +40,7 @@ goto :choice
 
 :yes
 powershell.exe -Command "bcdedit /set hypervisorlaunchtype off"
+powershell.exe -Command "Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Hypervisor"
 
 ECHO Hyper-V has been fully disabled! Please restart your PC. 
 :end
