@@ -1,5 +1,5 @@
 @ECHO OFF
-
+@megahomo
 
 :: BatchGotAdmin
 :-------------------------------------
